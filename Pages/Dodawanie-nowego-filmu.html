@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj film - Filmo-Sfera</title>
+    <link rel="stylesheet" href="../Resources/CSS/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Filmo-Sfera</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Strona Główna</a></li>
+                <li><a href="filmy.html">Filmy</a></li>
+                <li><a href="profil-uzytkownika.html">Profil</a></li>
+                <li><a href="#" onclick="FilmOSfera.logout()">Wyloguj</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="form-container">
+            <h2>Dodaj nowy film</h2>
+            <form id="add-movie-form">
+                <div class="form-group">
+                    <label for="title">Tytuł filmu:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="director">Reżyser:</label>
+                    <input type="text" id="director" name="director" required>
+                </div>
+                <div class="form-group">
+                    <label for="release_year">Rok produkcji:</label>
+                    <input type="number" id="release_year" name="release_year" min="1900" max="2024" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Opis filmu:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Plakat filmu:</label>
+                    <input type="file" id="image" name="image" accept="image/*">
+                </div>
+                <div id="add-movie-error" class="error"></div>
+                <div id="add-movie-success" class="success"></div>
+                <button type="submit" class="btn">Dodaj film</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="../Resources/JS/script.js"></script>
+</body>
+</html>

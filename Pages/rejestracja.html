@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja - Filmo-Sfera</title>
+    <link rel="stylesheet" href="../Resources/CSS/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Filmo-Sfera</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Strona Główna</a></li>
+                <li><a href="panel-logowania.html">Logowanie</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="form-container">
+            <h2>Rejestracja</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="login">Login:</label>
+                    <input type="text" id="login" name="login" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Hasło:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Potwierdź hasło:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <div id="register-error" class="error"></div>
+                <div id="register-success" class="success"></div>
+                <button type="submit" class="btn">Zarejestruj</button>
+            </form>
+            <p>Masz już konto? <a href="panel-logowania.html">Zaloguj się</a></p>
+        </div>
+    </main>
+
+    <script src="../Resources/JS/script.js"></script>
+</body>
+</html>

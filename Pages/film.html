@@ -3,25 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Szczegóły filmu - Filmo-Sfera</title>
+    <title>Szczegóły Filmu - FilmOSfera</title>
     <link rel="stylesheet" href="../Resources/CSS/style.css">
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Filmo-Sfera</div>
+            <div class="logo">Filmosfera</div>
             <ul class="nav-links">
                 <li><a href="../index.html">Strona Główna</a></li>
                 <li><a href="filmy.html">Filmy</a></li>
-                <li><a href="Dodawanie-nowego-filmu.html">Dodaj film</a></li>
-                <li><a href="profil-uzytkownika.html">Profil</a></li>
+                <div id="authLinks">
+                    <li><a href="panel-logowania.html">Logowanie</a></li>
+                    <li><a href="rejestracja.html">Rejestracja</a></li>
+                </div>
+                <div id="userLinks" class="hidden">
+                    <li><a href="dodawanie-nowego-filmu.html">Dodaj film</a></li>
+                    <li><a href="profil-uzytkownika.html">Profil</a></li>
+                    <li><a href="../index.html" id="logoutBtn">Wyloguj</a></li>
+                </div>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <div id="movie-details">
-            <!-- Szczegóły filmu będą ładowane dynamicznie -->
+    <main class="main-content">
+        <div class="container">
+            <div id="movieDetails">
+                <div class="movie-card" style="max-width: 800px; margin: 0 auto;">
+                    <h1 id="movieTitle">Ładowanie szczegółów filmu...</h1>
+                    <div class="movie-info" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+                        <p><strong>Reżyser:</strong> <span id="movieDirector"></span></p>
+                        <p><strong>Rok produkcji:</strong> <span id="movieYear"></span></p>
+                        <p><strong>Gatunek:</strong> <span id="movieGenre"></span></p>
+                        <p><strong>Dodane przez:</strong> <span id="movieAuthor"></span></p>
+                        <p><strong>Data dodania:</strong> <span id="movieDate"></span></p>
+                    </div>
+                    <div class="movie-description">
+                        <h3>Opis filmu:</h3>
+                        <p id="movieDescription" style="line-height: 1.8; font-size: 1.1rem;"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="filmy.html" class="btn">← Powrót do listy filmów</a>
+            </div>
         </div>
     </main>
 

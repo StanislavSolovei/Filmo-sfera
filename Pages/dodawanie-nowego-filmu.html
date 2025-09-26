@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj Film - FilmOSfera</title>
+    <link rel="stylesheet" href="../Resources/CSS/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Filmosfera</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Strona Główna</a></li>
+                <li><a href="filmy.html">Filmy</a></li>
+                <div id="authLinks">
+                    <li><a href="panel-logowania.html">Logowanie</a></li>
+                    <li><a href="rejestracja.html">Rejestracja</a></li>
+                </div>
+                <div id="userLinks" class="hidden">
+                    <li><a href="dodawanie-nowego-filmu.html">Dodaj film</a></li>
+                    <li><a href="profil-uzytkownika.html">Profil</a></li>
+                    <li><a href="../index.html" id="logoutBtn">Wyloguj</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h1>Dodaj Nowy Film</h1>
+                <form id="addMovieForm">
+                    <div class="form-group">
+                        <label for="title">Tytuł filmu:</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Opis:</label>
+                        <textarea id="description" name="description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="director">Reżyser:</label>
+                        <input type="text" id="director" name="director" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="release_year">Rok produkcji:</label>
+                        <input type="number" id="release_year" name="release_year" min="1900" max="2030" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Gatunek:</label>
+                        <select id="genre" name="genre" required>
+                            <option value="">Wybierz gatunek</option>
+                            <option value="Akcja">Akcja</option>
+                            <option value="Komedia">Komedia</option>
+                            <option value="Dramat">Dramat</option>
+                            <option value="Sci-Fi">Science Fiction</option>
+                            <option value="Horror">Horror</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Romans">Romans</option>
+                            <option value="Animacja">Animacja</option>
+                            <option value="Dokument">Dokument</option>
+                            <option value="Fantasy">Fantasy</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Dodaj Film</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="../Resources/JS/script.js"></script>
+</body>
+</html>

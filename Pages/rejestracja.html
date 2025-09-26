@@ -3,45 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rejestracja - Filmo-Sfera</title>
+    <title>Rejestracja - FilmOSfera</title>
     <link rel="stylesheet" href="../Resources/CSS/style.css">
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Filmo-Sfera</div>
+            <div class="logo">Filmosfera</div>
             <ul class="nav-links">
                 <li><a href="../index.html">Strona Główna</a></li>
-                <li><a href="panel-logowania.html">Logowanie</a></li>
+                <li><a href="filmy.html">Filmy</a></li>
+                <div id="authLinks">
+                    <li><a href="panel-logowania.html">Logowanie</a></li>
+                    <li><a href="rejestracja.html">Rejestracja</a></li>
+                </div>
+                <div id="userLinks" class="hidden">
+                    <li><a href="dodawanie-nowego-filmu.html">Dodaj film</a></li>
+                    <li><a href="profil-uzytkownika.html">Profil</a></li>
+                    <li><a href="../index.html" id="logoutBtn">Wyloguj</a></li>
+                </div>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <div class="form-container">
-            <h2>Rejestracja</h2>
-            <form id="register-form">
-                <div class="form-group">
-                    <label for="login">Login:</label>
-                    <input type="text" id="login" name="login" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Hasło:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div class="form-group">
-                    <label for="confirm-password">Potwierdź hasło:</label>
-                    <input type="password" id="confirm-password" name="confirm-password" required>
-                </div>
-                <div id="register-error" class="error"></div>
-                <div id="register-success" class="success"></div>
-                <button type="submit" class="btn">Zarejestruj</button>
-            </form>
-            <p>Masz już konto? <a href="panel-logowania.html">Zaloguj się</a></p>
+    <main class="main-content">
+        <div class="container">
+            <div class="form-container">
+                <h1>Rejestracja</h1>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="login">Login (min. 3 znaki):</label>
+                        <input type="text" id="login" name="login" required minlength="3">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Hasło (min. 6 znaków):</label>
+                        <input type="password" id="password" name="password" required minlength="6">
+                    </div>
+                    <button type="submit" class="btn">Zarejestruj się</button>
+                </form>
+                <p style="margin-top: 1rem; text-align: center;">
+                    Masz już konto? <a href="panel-logowania.html">Zaloguj się</a>
+                </p>
+            </div>
         </div>
     </main>
 

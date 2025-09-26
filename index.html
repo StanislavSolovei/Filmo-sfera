@@ -3,63 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filmo-Sfera - Strona Główna</title>
+    <title>Filmosfera - Strona Główna</title>
     <link rel="stylesheet" href="Resources/CSS/style.css">
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Filmo-Sfera</div>
+            <div class="logo">Filmosfera</div>
             <ul class="nav-links">
+                <li><a href="index.html">Strona Główna</a></li>
                 <li><a href="Pages/filmy.html">Filmy</a></li>
-                <li><a href="Pages/panel-logowania.html">Logowanie</a></li>
-                <li><a href="Pages/Dodawanie-nowego-filmu.html">Dodaj film</a></li>
+                <div id="authLinks">
+                    <li><a href="Pages/panel-logowania.html">Logowanie</a></li>
+                    <li><a href="Pages/rejestracja.html">Rejestracja</a></li>
+                </div>
+                <div id="userLinks" class="hidden">
+                    <li><a href="Pages/dodawanie-nowego-filmu.html">Dodaj film</a></li>
+                    <li><a href="Pages/profil-uzytkownika.html">Profil</a></li>
+                    <li><a href="../index.html" id="logoutBtn">Wyloguj</a></li>
+                </div>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <section class="hero">
-            <h1>Witaj w Filmo-Sferze!</h1>
-            <p>Odkrywaj, oceniaj i dziel się opiniami o filmach</p>
-            <a href="Pages/filmy.html" class="btn">Przeglądaj filmy</a>
-            <a href="Pages/panel-logowania.html" class="btn btn-primary">Zaloguj się</a>
-        </section>
-
-        <section>
-            <h2>Ostatnio dodane filmy</h2>
-            <div id="featured-movies" class="movies-grid">
-                <!-- Filmy będą ładowane dynamicznie -->
+    <main class="main-content">
+        <div class="container">
+            <h1>Witaj w Filmosferze!</h1>
+            <p>Twoje miejsce do odkrywania i dzielenia się filmami.</p>
+            
+            <h2 style="margin-top: 2rem;">Ostatnio dodane filmy</h2>
+            <div class="movie-grid" id="featuredMovies">
+                <!-- Tutaj będą ładowali się filmy -->
             </div>
-        </section>
+        </div>
     </main>
 
     <script src="Resources/JS/script.js"></script>
-    <script>
-        // Ładowanie filmów na stronie głównej
-        document.addEventListener('DOMContentLoaded', async function() {
-            try {
-                const response = await FilmOSfera.getMovies();
-                if (response.success && response.movies.length > 0) {
-                    const featuredMovies = response.movies.slice(0, 3);
-                    const container = document.getElementById('featured-movies');
-                    
-                    container.innerHTML = featuredMovies.map(movie => `
-                        <div class="movie-card">
-                            <img src="Resources/Images/${movie.image_path || 'placeholder.jpg'}" alt="${movie.title}">
-                            <div class="movie-info">
-                                <h3>${movie.title}</h3>
-                                <p><strong>Reżyser:</strong> ${movie.director}</p>
-                                <p><strong>Rok:</strong> ${movie.release_year}</p>
-                                <a href="Pages/film.html?id=${movie.id}" class="btn">Zobacz więcej</a>
-                            </div>
-                        </div>
-                    `).join('');
-                }
-            } catch (error) {
-                console.error('Błąd ładowania filmów:', error);
-            }
-        });
-    </script>
 </body>
 </html>
